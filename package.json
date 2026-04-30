@@ -1,0 +1,20 @@
+{
+  "name": "coffeeshop",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.32.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:mall": "turbo run dev --filter=mall",
+    "dev:shop": "turbo run dev --filter=shop",
+    "dev:admin": "turbo run dev --filter=admin",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  }
+}

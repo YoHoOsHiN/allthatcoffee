@@ -1,0 +1,10 @@
+{
+  "extends": "@coffeeshop/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["ES2020", "dom"],
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "src/seed.ts"]
+}

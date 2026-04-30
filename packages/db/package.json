@@ -1,0 +1,24 @@
+{
+  "name": "@coffeeshop/db",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./types": "./src/types/database.ts",
+    "./types/*": "./src/types/*.ts"
+  },
+  "scripts": {
+    "db:types": "supabase gen types typescript --local > src/types/database.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "@supabase/ssr": "^0.10.2"
+  },
+  "devDependencies": {
+    "@coffeeshop/tsconfig": "workspace:*",
+    "supabase": "^2.22.6",
+    "typescript": "^5.8.3"
+  }
+}
