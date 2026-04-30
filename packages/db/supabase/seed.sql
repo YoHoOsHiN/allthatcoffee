@@ -1,25 +1,25 @@
 -- 샘플 데이터 (개발 환경용)
 
 -- 슈퍼 어드민 유저
-INSERT INTO users (id, email, name, role) VALUES
+INSERT INTO coffeeshop.users (id, email, name, role) VALUES
   ('00000000-0000-0000-0000-000000000001', 'admin@coffeeshop.com', '관리자', 'SUPER_ADMIN')
 ON CONFLICT (email) DO NOTHING;
 
 -- 샘플 샵
-INSERT INTO shops (id, name, slug, description, address, phone, email, owner_id) VALUES
+INSERT INTO coffeeshop.shops (id, name, slug, description, address, phone, email, owner_id) VALUES
   ('10000000-0000-0000-0000-000000000001', '블루보틀', 'bluebottle', '신선한 원두로 만든 스페셜티 커피', '서울시 강남구 테헤란로 123', '02-1234-5678', 'bluebottle@coffeeshop.com', '00000000-0000-0000-0000-000000000001'),
   ('10000000-0000-0000-0000-000000000002', '스텀프타운', 'stumptown', '포틀랜드에서 온 정통 핸드드립 커피', '서울시 마포구 홍대로 456', '02-9876-5432', 'stumptown@coffeeshop.com', '00000000-0000-0000-0000-000000000001')
 ON CONFLICT (slug) DO NOTHING;
 
 -- 카테고리
-INSERT INTO categories (id, name, slug, sort_order, shop_id) VALUES
+INSERT INTO coffeeshop.categories (id, name, slug, sort_order, shop_id) VALUES
   ('20000000-0000-0000-0000-000000000001', '에스프레소', 'espresso', 1, '10000000-0000-0000-0000-000000000001'),
   ('20000000-0000-0000-0000-000000000002', '필터 커피', 'filter',    2, '10000000-0000-0000-0000-000000000001'),
   ('20000000-0000-0000-0000-000000000003', '에스프레소', 'espresso', 1, '10000000-0000-0000-0000-000000000002')
 ON CONFLICT (shop_id, slug) DO NOTHING;
 
 -- 상품
-INSERT INTO products (id, name, slug, description, price, is_available, is_featured, shop_id, category_id) VALUES
+INSERT INTO coffeeshop.products (id, name, slug, description, price, is_available, is_featured, shop_id, category_id) VALUES
   ('30000000-0000-0000-0000-000000000001', '카페 라떼',   'latte',      '부드러운 우유 거품과 에스프레소의 조화',         6500, TRUE, TRUE,  '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000001'),
   ('30000000-0000-0000-0000-000000000002', '아메리카노',  'americano',  '깔끔한 에스프레소에 물을 더한 클래식',           5500, TRUE, FALSE, '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000001'),
   ('30000000-0000-0000-0000-000000000003', '푸어오버',    'pour-over',  '에티오피아 원두로 핸드드립한 싱글 오리진',       8500, TRUE, TRUE,  '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000002'),

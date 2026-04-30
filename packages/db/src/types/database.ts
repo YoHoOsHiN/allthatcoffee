@@ -4,7 +4,7 @@ export type UserRole = "SUPER_ADMIN" | "SHOP_OWNER" | "SHOP_STAFF" | "CUSTOMER";
 export type OrderStatus = "PENDING" | "CONFIRMED" | "PREPARING" | "READY" | "COMPLETED" | "CANCELLED";
 
 export interface Database {
-  public: {
+  coffeeshop: {
     Tables: {
       users: {
         Row: {

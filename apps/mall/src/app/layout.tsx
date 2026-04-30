@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: {
     template: "%s | CoffeeShop Mall",
-    default: "CoffeeShop Mall - 모든 커피샵을 한 곳에서",
+    default: "CoffeeShop Mall — 전국 스페셜티 커피를 한 곳에서",
   },
   description: "전국 스페셜티 커피샵의 메뉴를 한 곳에서 만나보세요.",
 };
@@ -12,9 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className="bg-stone-50 text-stone-900 antialiased">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
