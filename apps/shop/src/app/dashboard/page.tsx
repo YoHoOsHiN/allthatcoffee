@@ -41,7 +41,7 @@ export default async function DashboardPage() {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="text-2xl font-bold text-stone-900 mb-6">대시보드</h1>
+        <h1 className="text-2xl font-bold text-[#1C0F0A] mb-6 tracking-tight">대시보드</h1>
 
         {/* 통계 카드 */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -56,27 +56,27 @@ export default async function DashboardPage() {
         </div>
 
         {/* 최근 주문 */}
-        <div className="bg-white rounded-xl border border-stone-200">
-          <div className="px-5 py-4 border-b border-stone-100">
-            <h2 className="font-semibold text-stone-900">최근 주문</h2>
+        <div className="bg-white rounded-2xl border border-[#DCC8B0] shadow-sm">
+          <div className="px-5 py-4 border-b border-[#F0E6D8]">
+            <h2 className="font-semibold text-[#1C0F0A]">최근 주문</h2>
           </div>
-          <div className="divide-y divide-stone-100">
+          <div className="divide-y divide-[#F0E6D8]">
             {(recentOrders ?? []).length === 0 && (
-              <p className="text-sm text-stone-500 text-center py-8">주문이 없습니다.</p>
+              <p className="text-sm text-[#C4A07A] text-center py-8">주문이 없습니다.</p>
             )}
             {(recentOrders ?? []).map((order) => (
               <div key={order.id} className="px-5 py-3 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-stone-900">{order.order_number}</p>
-                  <p className="text-xs text-stone-400">
+                  <p className="text-sm font-medium text-[#1C0F0A]">{order.order_number}</p>
+                  <p className="text-xs text-[#C4A07A]">
                     {new Date(order.created_at).toLocaleDateString("ko-KR")}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">
+                  <span className="text-xs bg-[#F0E6D8] text-[#6B4226] px-2 py-0.5 rounded-full font-semibold">
                     {statusLabel[order.status] ?? order.status}
                   </span>
-                  <span className="text-sm font-medium text-stone-900">
+                  <span className="text-sm font-medium text-[#1C0F0A]">
                     {order.total_amount.toLocaleString()}원
                   </span>
                 </div>
@@ -101,12 +101,14 @@ function StatCard({
   small?: boolean;
 }) {
   return (
-    <div className="bg-white rounded-xl border border-stone-200 p-5">
+    <div className="bg-white rounded-2xl border border-[#DCC8B0] p-5 shadow-sm">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm text-stone-500">{label}</span>
-        <span className="text-xl">{icon}</span>
+        <span className="text-sm text-[#6B4226]">{label}</span>
+        <div className="w-9 h-9 rounded-xl bg-[#F0E6D8] flex items-center justify-center">
+          <span className="text-lg">{icon}</span>
+        </div>
       </div>
-      <p className={["font-bold text-stone-900", small ? "text-sm" : "text-2xl"].join(" ")}>{value}</p>
+      <p className={["font-bold text-[#1C0F0A]", small ? "text-sm" : "text-2xl"].join(" ")}>{value}</p>
     </div>
   );
 }

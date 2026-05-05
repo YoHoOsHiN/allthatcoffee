@@ -20,13 +20,13 @@ export async function DashboardLayout({ children }: { children: React.ReactNode 
     <div className="flex min-h-screen">
       <Sidebar shopName={shopName} />
       <div className="flex-1 flex flex-col">
-        <header className="bg-white border-b border-stone-200 px-6 py-3 flex items-center justify-between">
+        <header className="bg-[#FAF6F0] border-b border-[#DCC8B0] px-6 py-3 flex items-center justify-between">
           <div />
           <div className="flex items-center gap-3">
-            <span className="text-sm text-stone-600">{user.email}</span>
+            <span className="text-sm text-[#6B4226] font-medium">{user.email}</span>
           </div>
         </header>
-        <main className="flex-1 p-6 bg-stone-50">{children}</main>
+        <main className="flex-1 p-6 bg-[#FAF6F0]">{children}</main>
       </div>
     </div>
   );
