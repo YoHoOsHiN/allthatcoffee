@@ -6,7 +6,9 @@
       "Bash(pnpm turbo *)",
       "Bash(pnpm --filter shop run type-check)",
       "Bash(pnpm --filter admin run type-check)",
-      "Bash(pnpm info *)"
+      "Bash(pnpm info *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
     ]
   }
 }
