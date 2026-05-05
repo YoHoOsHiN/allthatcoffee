@@ -61,18 +61,18 @@ export default async function ShopDetailPage({ params, searchParams }: Props) {
       <Header />
       <main>
         {/* Shop Hero */}
-        <div className="bg-brand-700 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#1C0F0A] via-[#2D1810] to-[#4A2515] relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-25"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 20% 50%, #d09aff 0%, transparent 55%), radial-gradient(circle at 80% 80%, #7c15d0 0%, transparent 50%)",
+                "radial-gradient(circle at 20% 50%, rgba(193,124,36,0.4) 0%, transparent 55%), radial-gradient(circle at 80% 80%, rgba(74,37,21,0.8) 0%, transparent 50%)",
             }}
           />
           <div className="relative max-w-5xl mx-auto px-5 sm:px-8 py-12">
             <Link
               href="/shops"
-              className="inline-flex items-center gap-1 text-white/55 text-[13px] font-medium hover:text-white/90 transition-colors mb-5"
+              className="inline-flex items-center gap-1 text-white/55 text-[13px] font-medium hover:text-white/90 transition-colors duration-200 mb-5"
             >
               <svg
                 width="14"
@@ -88,7 +88,7 @@ export default async function ShopDetailPage({ params, searchParams }: Props) {
               </svg>
               전체 샵
             </Link>
-            <h1 className="text-[32px] sm:text-[40px] font-black text-white leading-tight tracking-tight mb-2">
+            <h1 className="font-[family-name:var(--font-display)] text-[32px] sm:text-[44px] font-bold text-white leading-tight tracking-tight mb-2 italic">
               {shop.name}
             </h1>
             {shop.description && (
@@ -118,15 +118,15 @@ export default async function ShopDetailPage({ params, searchParams }: Props) {
 
         {/* Category Tabs */}
         {catList.length > 0 && (
-          <div className="bg-white border-b border-gray-100 sticky top-[60px] z-40">
+          <div className="bg-[#FAF6F0] border-b border-[#DCC8B0]/40 sticky top-[60px] z-40">
             <div className="max-w-5xl mx-auto px-5 sm:px-8">
               <div className="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar">
                 <Link
                   href={`/shops/${slug}`}
-                  className={`flex-shrink-0 px-4 py-1.5 rounded-full text-[13px] font-bold transition-colors ${
+                  className={`flex-shrink-0 px-4 py-1.5 rounded-full text-[13px] font-bold transition-colors duration-200 ${
                     !activeCategory
-                      ? "bg-brand-700 text-white"
-                      : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                      ? "bg-[#C17C24] text-white"
+                      : "bg-[#F0E6D8] text-[#6B4226] hover:bg-[#DCC8B0]"
                   }`}
                 >
                   전체
@@ -135,10 +135,10 @@ export default async function ShopDetailPage({ params, searchParams }: Props) {
                   <Link
                     key={cat.id}
                     href={`/shops/${slug}?category=${cat.slug}`}
-                    className={`flex-shrink-0 px-4 py-1.5 rounded-full text-[13px] font-bold transition-colors ${
+                    className={`flex-shrink-0 px-4 py-1.5 rounded-full text-[13px] font-bold transition-colors duration-200 ${
                       activeCategory === cat.slug
-                        ? "bg-brand-700 text-white"
-                        : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                        ? "bg-[#C17C24] text-white"
+                        : "bg-[#F0E6D8] text-[#6B4226] hover:bg-[#DCC8B0]"
                     }`}
                   >
                     {cat.name}
@@ -150,28 +150,28 @@ export default async function ShopDetailPage({ params, searchParams }: Props) {
         )}
 
         {/* Product List */}
-        <div className="bg-gray-50 min-h-[40vh]">
+        <div className="bg-[#FAF6F0] min-h-[40vh]">
           <div className="max-w-5xl mx-auto px-5 sm:px-8 py-8">
             {productList.length > 0 ? (
               <div className="flex flex-col gap-3">
                 {productList.map((p) => (
                   <div
                     key={p.id}
-                    className="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                    className="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer border border-[#DCC8B0]"
                   >
-                    <div className="w-[72px] h-[72px] rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center flex-shrink-0">
+                    <div className="w-[72px] h-[72px] rounded-xl bg-gradient-to-br from-[#FAF6F0] to-[#F0E6D8] flex items-center justify-center flex-shrink-0 border border-[#DCC8B0]/50">
                       <span className="text-3xl">☕</span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-[15px] text-gray-900">{p.name}</h3>
+                      <h3 className="font-bold text-[15px] text-[#1C0F0A]">{p.name}</h3>
                       {p.description && (
-                        <p className="text-[12px] text-gray-400 mt-0.5 line-clamp-2">{p.description}</p>
+                        <p className="text-[12px] text-[#C4A07A] mt-0.5 line-clamp-2">{p.description}</p>
                       )}
                     </div>
                     <div className="flex-shrink-0 text-right pl-2">
-                      <p className="text-[16px] font-black text-gray-900 whitespace-nowrap">
+                      <p className="text-[16px] font-black text-[#1C0F0A] whitespace-nowrap">
                         {p.price.toLocaleString()}
-                        <span className="text-[12px] font-semibold text-gray-400 ml-0.5">원</span>
+                        <span className="text-[12px] font-semibold text-[#C4A07A] ml-0.5">원</span>
                       </p>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export default async function ShopDetailPage({ params, searchParams }: Props) {
               </div>
             ) : (
               <div className="text-center py-20">
-                <p className="text-gray-400 text-[15px]">
+                <p className="text-[#C4A07A] text-[15px]">
                   {activeCategory ? "해당 카테고리에 메뉴가 없습니다." : "등록된 메뉴가 없습니다."}
                 </p>
               </div>

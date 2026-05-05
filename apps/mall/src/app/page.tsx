@@ -47,19 +47,19 @@ export default async function HomePage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-brand-700">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#1C0F0A] via-[#2D1810] to-[#4A2515]">
           <div
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 15% 50%, #b568f8 0%, transparent 55%), radial-gradient(circle at 85% 20%, #7c15d0 0%, transparent 50%)",
+                "radial-gradient(circle at 30% 60%, rgba(193,124,36,0.3) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(74,37,21,0.6) 0%, transparent 50%)",
             }}
           />
           <div className="relative max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-28 text-center">
-            <span className="inline-flex items-center gap-1.5 bg-white/15 text-white/90 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 tracking-wide">
+            <span className="inline-flex items-center gap-1.5 bg-[#C17C24]/20 text-[#D4A853] border border-[#C17C24]/30 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 tracking-wide">
               ✨ 전국 스페셜티 커피 한 곳에서
             </span>
-            <h1 className="text-[40px] sm:text-[56px] font-black text-white leading-[1.1] tracking-tight mb-4">
+            <h1 className="font-[family-name:var(--font-display)] text-[40px] sm:text-[60px] font-bold text-white leading-[1.1] tracking-tight mb-4 italic">
               커피를 더 쉽게,
               <br />더 즐겁게
             </h1>
@@ -69,13 +69,13 @@ export default async function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/products"
-                className="bg-white text-brand-700 px-8 py-3.5 rounded-2xl font-bold text-[15px] hover:bg-brand-50 transition-colors shadow-lg shadow-brand-950/40"
+                className="bg-[#C17C24] text-white px-8 py-3.5 rounded-2xl font-bold text-[15px] hover:bg-[#9A6020] transition-all duration-200 shadow-lg shadow-[#1C0F0A]/40 hover:shadow-xl"
               >
                 메뉴 둘러보기
               </Link>
               <Link
                 href="/shops"
-                className="bg-white/15 text-white border border-white/20 px-8 py-3.5 rounded-2xl font-bold text-[15px] hover:bg-white/25 transition-colors"
+                className="bg-white/10 text-white border border-white/20 px-8 py-3.5 rounded-2xl font-bold text-[15px] hover:bg-white/20 transition-all duration-200"
               >
                 샵 찾기
               </Link>
@@ -84,13 +84,13 @@ export default async function HomePage() {
         </section>
 
         {/* Shops */}
-        <section className="bg-white py-14">
+        <section className="bg-[#FAF6F0] py-14">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-[22px] font-extrabold text-gray-900 tracking-tight">입점 샵</h2>
+              <h2 className="text-[22px] font-extrabold text-[#1C0F0A] tracking-tight">입점 샵</h2>
               <Link
                 href="/shops"
-                className="text-[13px] font-semibold text-brand-700 hover:text-brand-600 flex items-center gap-0.5 transition-colors"
+                className="text-[13px] font-semibold text-[#C17C24] hover:text-[#9A6020] flex items-center gap-0.5 transition-colors duration-200"
               >
                 전체 보기
                 <ChevronRight />
@@ -101,31 +101,31 @@ export default async function HomePage() {
                 <Link
                   key={shop.id}
                   href={`/shops/${shop.slug}`}
-                  className="group flex flex-col items-center gap-2.5 p-4 rounded-2xl hover:bg-brand-50 transition-colors"
+                  className="group flex flex-col items-center gap-2.5 p-4 rounded-2xl hover:bg-[#F0E6D8] transition-colors duration-200"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F0E6D8] to-[#DCC8B0] flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-200">
                     <span className="text-2xl">☕</span>
                   </div>
-                  <span className="text-[12px] font-semibold text-gray-700 text-center line-clamp-1">
+                  <span className="text-[12px] font-semibold text-[#6B4226] text-center line-clamp-1">
                     {shop.name}
                   </span>
                 </Link>
               ))}
               {shops.length === 0 && (
-                <p className="text-gray-400 col-span-6 text-center py-8 text-sm">등록된 샵이 없습니다.</p>
+                <p className="text-[#C4A07A] col-span-6 text-center py-8 text-sm">등록된 샵이 없습니다.</p>
               )}
             </div>
           </div>
         </section>
 
         {/* Featured Products */}
-        <section className="bg-gray-50 py-14">
+        <section className="bg-[#F0E6D8] py-14">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-[22px] font-extrabold text-gray-900 tracking-tight">추천 메뉴</h2>
+              <h2 className="text-[22px] font-extrabold text-[#1C0F0A] tracking-tight">추천 메뉴</h2>
               <Link
                 href="/products"
-                className="text-[13px] font-semibold text-brand-700 hover:text-brand-600 flex items-center gap-0.5 transition-colors"
+                className="text-[13px] font-semibold text-[#C17C24] hover:text-[#9A6020] flex items-center gap-0.5 transition-colors duration-200"
               >
                 전체 보기
                 <ChevronRight />
@@ -137,40 +137,40 @@ export default async function HomePage() {
                 return (
                   <div
                     key={product.id}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer"
+                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer border border-[#DCC8B0]"
                   >
-                    <div className="aspect-[4/3] bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center">
+                    <div className="aspect-[4/3] bg-gradient-to-br from-[#FAF6F0] to-[#F0E6D8] flex items-center justify-center">
                       <span className="text-4xl">☕</span>
                     </div>
                     <div className="p-4">
                       {shop?.name && (
-                        <span className="inline-block text-[11px] font-bold text-brand-700 bg-brand-50 px-2 py-0.5 rounded-md mb-1.5">
+                        <span className="inline-block text-[11px] font-bold text-[#6B4226] bg-[#FAF6F0] px-2 py-0.5 rounded-md mb-1.5 border border-[#DCC8B0]/50">
                           {shop.name}
                         </span>
                       )}
-                      <h3 className="font-bold text-[14px] text-gray-900 line-clamp-1">{product.name}</h3>
+                      <h3 className="font-bold text-[14px] text-[#1C0F0A] line-clamp-1">{product.name}</h3>
                       {product.description && (
-                        <p className="text-[12px] text-gray-400 mt-0.5 line-clamp-1">{product.description}</p>
+                        <p className="text-[12px] text-[#C4A07A] mt-0.5 line-clamp-1">{product.description}</p>
                       )}
-                      <p className="text-[15px] font-black text-gray-900 mt-2.5">
+                      <p className="text-[15px] font-black text-[#1C0F0A] mt-2.5">
                         {product.price.toLocaleString()}
-                        <span className="text-[12px] font-semibold text-gray-400 ml-0.5">원</span>
+                        <span className="text-[12px] font-semibold text-[#C4A07A] ml-0.5">원</span>
                       </p>
                     </div>
                   </div>
                 );
               })}
               {featuredProducts.length === 0 && (
-                <p className="text-gray-400 col-span-4 text-center py-12 text-sm">추천 메뉴가 없습니다.</p>
+                <p className="text-[#C4A07A] col-span-4 text-center py-12 text-sm">추천 메뉴가 없습니다.</p>
               )}
             </div>
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-brand-950 py-16">
+        <section className="bg-[#1C0F0A] py-16">
           <div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
-            <h2 className="text-[26px] sm:text-[30px] font-black text-white mb-3 tracking-tight">
+            <h2 className="font-[family-name:var(--font-display)] text-[26px] sm:text-[32px] font-bold text-white mb-3 tracking-tight italic">
               나만의 커피를 찾아보세요
             </h2>
             <p className="text-white/55 text-[15px] mb-8">
@@ -178,7 +178,7 @@ export default async function HomePage() {
             </p>
             <Link
               href="/products"
-              className="inline-block bg-white text-brand-700 px-10 py-3.5 rounded-2xl font-bold text-[15px] hover:bg-brand-50 transition-colors"
+              className="inline-block bg-[#C17C24] text-white px-10 py-3.5 rounded-2xl font-bold text-[15px] hover:bg-[#9A6020] transition-all duration-200 shadow-lg shadow-[#1C0F0A]/40"
             >
               지금 둘러보기
             </Link>
