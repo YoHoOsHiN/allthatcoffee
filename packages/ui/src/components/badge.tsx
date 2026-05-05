@@ -7,9 +7,9 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-  default: "bg-stone-100 text-stone-700",
+  default: "bg-[#F0E6D8] text-[#6B4226]",
   success: "bg-green-100 text-green-700",
-  warning: "bg-amber-100 text-amber-700",
+  warning: "bg-amber-100 text-[#9A6020]",
   danger: "bg-red-100 text-red-700",
   info: "bg-blue-100 text-blue-700",
 };
@@ -18,7 +18,7 @@ export function Badge({ variant = "default", className = "", children, ...props 
   return (
     <span
       className={[
-        "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium",
+        "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold",
         variantClasses[variant],
         className,
       ].join(" ")}

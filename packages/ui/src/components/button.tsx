@@ -10,17 +10,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary: "bg-amber-600 text-white hover:bg-amber-700 focus:ring-amber-500",
-  secondary: "bg-stone-800 text-white hover:bg-stone-900 focus:ring-stone-500",
-  outline: "border border-amber-600 text-amber-600 hover:bg-amber-50 focus:ring-amber-500",
-  ghost: "text-stone-700 hover:bg-stone-100 focus:ring-stone-500",
+  primary: "bg-[#C17C24] text-white hover:bg-[#9A6020] focus:ring-[#C17C24] shadow-sm hover:shadow-md",
+  secondary: "bg-[#1C0F0A] text-white hover:bg-[#2D1810] focus:ring-[#1C0F0A]",
+  outline: "border-2 border-[#C17C24] text-[#C17C24] hover:bg-[#FAF6F0] focus:ring-[#C17C24]",
+  ghost: "text-[#2D1810] hover:bg-[#F0E6D8] focus:ring-[#6B4226]",
   danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500",
 };
 
 const sizeClasses: Record<Size, string> = {
   sm: "px-3 py-1.5 text-sm",
   md: "px-4 py-2 text-sm",
-  lg: "px-6 py-3 text-base",
+  lg: "px-7 py-3.5 text-[15px] font-semibold",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -30,10 +30,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || loading}
         className={[
-          "inline-flex items-center justify-center font-medium rounded-lg",
+          "inline-flex items-center justify-center font-medium rounded-xl tracking-wide",
           "focus:outline-none focus:ring-2 focus:ring-offset-2",
           "disabled:opacity-50 disabled:cursor-not-allowed",
-          "transition-colors duration-150",
+          "transition-all duration-200",
           variantClasses[variant],
           sizeClasses[size],
           className,

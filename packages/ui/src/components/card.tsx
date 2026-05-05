@@ -8,8 +8,8 @@ export function Card({ hover = false, className = "", children, ...props }: Card
   return (
     <div
       className={[
-        "bg-white rounded-xl border border-stone-200 shadow-sm",
-        hover ? "hover:shadow-md transition-shadow duration-200 cursor-pointer" : "",
+        "bg-white rounded-2xl border border-[#DCC8B0] shadow-sm",
+        hover ? "hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer" : "",
         className,
       ].join(" ")}
       {...props}
@@ -21,7 +21,7 @@ export function Card({ hover = false, className = "", children, ...props }: Card
 
 export function CardHeader({ className = "", children, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={["px-6 py-4 border-b border-stone-100", className].join(" ")} {...props}>
+    <div className={["px-6 py-4 border-b border-[#F0E6D8]", className].join(" ")} {...props}>
       {children}
     </div>
   );
@@ -37,7 +37,7 @@ export function CardBody({ className = "", children, ...props }: HTMLAttributes<
 
 export function CardFooter({ className = "", children, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={["px-6 py-4 border-t border-stone-100", className].join(" ")} {...props}>
+    <div className={["px-6 py-4 border-t border-[#F0E6D8]", className].join(" ")} {...props}>
       {children}
     </div>
   );
