@@ -14,13 +14,20 @@ export function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-60 bg-stone-900 flex flex-col min-h-screen">
-      <div className="p-5 border-b border-stone-700">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">☕</span>
+    <aside className="w-60 bg-[#1C0F0A] flex flex-col min-h-screen">
+      <div className="p-5 border-b border-[#2D1810]">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-[#C17C24]/20 border border-[#C17C24]/40 flex items-center justify-center flex-shrink-0">
+            <span className="text-lg">☕</span>
+          </div>
           <div>
-            <p className="font-bold text-white text-sm leading-tight">CoffeeShop</p>
-            <p className="text-xs text-stone-400">Company Admin</p>
+            <p
+              className="font-bold text-white text-sm leading-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              CoffeeShop
+            </p>
+            <p className="text-xs text-[#C4A07A]">Company Admin</p>
           </div>
         </div>
       </div>
@@ -32,10 +39,10 @@ export function AdminSidebar() {
               key={item.href}
               href={item.href}
               className={[
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium mb-0.5 transition-colors",
+                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium mb-0.5 transition-colors duration-200",
                 active
-                  ? "bg-amber-600 text-white"
-                  : "text-stone-400 hover:bg-stone-800 hover:text-white",
+                  ? "bg-[#C17C24] text-white"
+                  : "text-[#C4A07A] hover:bg-[#2D1810] hover:text-white",
               ].join(" ")}
             >
               <span>{item.icon}</span>
