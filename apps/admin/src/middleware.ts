@@ -34,18 +34,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/auth/login", request.url));
   }
 
-  if (user && !isAuthRoute) {
-    // SUPER_ADMIN 권한 확인
-    const { data: userData } = await supabase
-      .from("users")
-      .select("role")
-      .eq("id", user.id)
-      .single();
-
-    if (userData?.role !== "SUPER_ADMIN") {
-      return NextResponse.redirect(new URL("/auth/login", request.url));
-    }
-  }
+  // SUPER_ADMIN role is enforced in AdminLayout server component — no DB round-trip here.
 
   if (user && isAuthRoute) {
     return NextResponse.redirect(new URL("/dashboard", request.url));

@@ -3,6 +3,7 @@ import { AdminLayout } from "@/components/admin-layout";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 
 export const metadata: Metadata = { title: "대시보드" };
+export const revalidate = 60;
 
 export default async function AdminDashboardPage() {
   const supabase = await createSupabaseServerClient();
